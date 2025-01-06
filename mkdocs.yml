@@ -1,0 +1,32 @@
+site_name: My Docs
+
+extra_javascript:
+  - highlight_extra.js
+  - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.0/highlight.min.js
+
+extra_css:
+  - https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.0/styles/a11y-light.min.css
+
+theme:
+  name: mkdocs
+#name: readthedocs
+  name: terminal
+  highlightjs: true
+  hljs_languages:
+    - lua
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: "#"
+  - def_list
+nav:
+  - Home: index.md
+  - Installation Guide: install.md
+  - API :
+    - Utilities: utilities.md
+    - Graphics: graphics.md
+    - Audio: audio.md
+    - Input: input.md
+    - VMU : vmu.md
+    - Tiled: tiled.md
+    - Timer: timer.md
