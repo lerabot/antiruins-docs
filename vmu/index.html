@@ -12,6 +12,8 @@
         <link rel="prev" href="../input/">
       
       
+        <link rel="next" href="../tiled/">
+      
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
@@ -221,7 +223,7 @@
         
   
   <span class="md-ellipsis">
-    Installation Guide
+    Get started
   </span>
   
 
@@ -408,6 +410,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#save" class="md-nav__link">
+    <span class="md-ellipsis">
+      Save
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vmu-animation" class="md-nav__link">
+    <span class="md-ellipsis">
+      VMU Animation
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -424,7 +444,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tiled.md" class="md-nav__link">
+      <a href="../tiled/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -445,11 +465,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../timer.md" class="md-nav__link">
+      <a href="../sprite/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Timer
+    Sprite
   </span>
   
 
@@ -499,6 +519,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#save" class="md-nav__link">
+    <span class="md-ellipsis">
+      Save
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vmu-animation" class="md-nav__link">
+    <span class="md-ellipsis">
+      VMU Animation
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -517,9 +555,11 @@
   <h1>VMU</h1>
 
 <h2 id="vmu">💾 VMU<a class="headerlink" href="#vmu" title="Permanent link">#</a></h2>
-<ul>
-<li>
-<p><em>save</em></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The VMU (Visual Memory Unit) is used for saving game data and displaying animations.</p>
+</div>
+<h2 id="save"><strong>Save</strong><a class="headerlink" href="#save" title="Permanent link">#</a></h2>
 <div class="language-lua highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">Keep</span> <span class="n">these</span> <span class="kr">in</span> <span class="n">mind</span> <span class="n">when</span> <span class="n">you</span> <span class="n">create</span> <span class="n">a</span> <span class="n">new</span> <span class="n">savefile</span><span class="p">:</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="n">gameName</span>  <span class="o">-</span> <span class="mi">16</span> <span class="n">character</span> <span class="n">long</span><span class="p">.</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="n">saveName</span>  <span class="o">-</span> <span class="mi">26</span> <span class="n">character</span> <span class="n">long</span><span class="p">.</span>
@@ -529,75 +569,65 @@
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="n">You</span> <span class="n">should</span> <span class="n">be</span> <span class="n">able</span> <span class="n">to</span> <span class="n">save</span> <span class="n">just</span> <span class="n">about</span> <span class="n">any</span> <span class="n">Lua</span> <span class="n">table</span> <span class="n">on</span> <span class="n">the</span> <span class="n">VMU</span><span class="p">.</span>
 </span></code></pre></div>
-</li>
-<li>
-<p><em>vmu animation</em></p>
-<div class="language-lua highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>  <span class="c1">-- To display images on the VMU, you need to create “animations”. </span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  <span class="c1">-- These animations can be 1 frame long (static). </span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>  <span class="c1">-- To load multiple frames, they need a number suffix (frame1.bin, frame2.bin, frame3.bin, etc)</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>  <span class="kd">local</span> <span class="n">animatation</span> <span class="o">=</span> <span class="p">{</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="n">icon</span>      <span class="o">=</span> <span class="p">{},</span>  <span class="c1">-- image data</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="n">cFrame</span>    <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>   <span class="c1">-- current frame displayed</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="n">length</span>    <span class="o">=</span> <span class="n">frameNum</span> <span class="ow">or</span> <span class="mi">1</span><span class="p">,</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    <span class="n">speed</span>     <span class="o">=</span> <span class="n">speed</span> <span class="ow">or</span> <span class="mi">1</span><span class="p">,</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    <span class="n">priority</span>  <span class="o">=</span> <span class="n">priority</span> <span class="ow">or</span> <span class="mi">1</span><span class="p">,</span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    <span class="n">active</span>    <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    <span class="n">filename</span>  <span class="o">=</span> <span class="n">filename</span><span class="p">,</span>
-</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="p">}</span>
+<hr />
+<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kr">function</span> <span class="nc">vmu</span><span class="p">.</span><span class="nf">checkForVMU</span><span class="p">()</span>
 </span></code></pre></div>
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th><strong>vmu.checkForVMU()</strong></th>
-<th>Check if there is a valid VMU present.</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>vmu.initSavefile(gameName, saveName, descLong, descShort, saveID)</strong></td>
-<td><a href="https://www.notion.so/ANTIRUINS-Documentation-157fdbfe0b3180b6a7c4d0560fb84742?pvs=21">Read the save notes.</a></td>
-</tr>
-<tr>
-<td><strong>vmu.checkForSave(saveID)</strong></td>
-<td>Check if a save file exists with the gameName and saveName specified in the saveID.</td>
-</tr>
-<tr>
-<td><strong>vmu.saveGame(saveID, data)</strong></td>
-<td>Save the <em>data</em> table in specified saveID. <em>data</em> can be any valid Lua Table.</td>
-</tr>
-<tr>
-<td><strong>vmu.loadGame(saveID)</strong></td>
-<td>Returns a <em>data</em> table from</td>
-</tr>
-<tr>
-<td><strong>vmu.deleteGame(saveID)</strong></td>
-<td></td>
-</tr>
-<tr>
-<td><strong>vmu.createAnimation(filename, frameNum, speed, priority)</strong></td>
-<td>Returns an <em>animation</em>. <a href="https://www.notion.so/ANTIRUINS-Documentation-157fdbfe0b3180b6a7c4d0560fb84742?pvs=21">Read the vmu animation notes</a>.</td>
-</tr>
-<tr>
-<td><strong>vmu.setScreen(animation, frame)</strong></td>
-<td>Displays the <em>frame</em> (integer) of specified <em>animation</em>.</td>
-</tr>
-<tr>
-<td><strong>vmu.playAnimation(animation, repeats, clearAfter)</strong></td>
-<td>Displays an animation for repeat number of time. If clearAfter is true, the VMU image will be cleared once the animation is done.</td>
-</tr>
-<tr>
-<td><strong>vmu.clearScreen()</strong></td>
-<td>Clears the VMU screen.</td>
-</tr>
-<tr>
-<td><strong>vmu.freeAnimation(animation)</strong></td>
-<td>Frees the memory of the animation.</td>
-</tr>
-</tbody>
-</table>
+Check if there is a valid VMU present.</p>
+<hr />
+<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kr">function</span> <span class="nc">vmu</span><span class="p">.</span><span class="nf">initSavefile</span><span class="p">(</span><span class="n">gameName</span><span class="p">,</span> <span class="n">saveName</span><span class="p">,</span> <span class="n">descLong</span><span class="p">,</span> <span class="n">descShort</span><span class="p">,</span> <span class="n">saveID</span><span class="p">)</span>
+</span></code></pre></div>
+Initializes a save file with the specified parameters.</p>
+<hr />
+<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kr">function</span> <span class="nc">vmu</span><span class="p">.</span><span class="nf">checkForSave</span><span class="p">(</span><span class="n">saveID</span><span class="p">)</span>
+</span></code></pre></div>
+Check if a save file exists with the specified <code>saveID</code>.</p>
+<hr />
+<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kr">function</span> <span class="nc">vmu</span><span class="p">.</span><span class="nf">saveGame</span><span class="p">(</span><span class="n">saveID</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+</span></code></pre></div>
+Save the <code>data</code> table in the specified <code>saveID</code>. <code>data</code> can be any valid Lua Table.</p>
+<hr />
+<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kr">function</span> <span class="nc">vmu</span><span class="p">.</span><span class="nf">loadGame</span><span class="p">(</span><span class="n">saveID</span><span class="p">)</span>
+</span></code></pre></div>
+Returns a <code>data</code> table from the specified <code>saveID</code>.</p>
+<hr />
+<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kr">function</span> <span class="nc">vmu</span><span class="p">.</span><span class="nf">deleteGame</span><span class="p">(</span><span class="n">saveID</span><span class="p">)</span>
+</span></code></pre></div>
+Deletes the save file with the specified <code>saveID</code>.</p>
+<hr />
+<h2 id="vmu-animation"><strong>VMU Animation</strong><a class="headerlink" href="#vmu-animation" title="Permanent link">#</a></h2>
+<p>To display images on the VMU, you need to create “animations”. These animations can be 1 frame long (static).   </p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">local</span> <span class="n">ANIMATION</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>    <span class="n">icon</span>      <span class="o">=</span> <span class="p">{},</span>  <span class="c1">-- image data</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>    <span class="n">cFrame</span>    <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>   <span class="c1">-- current frame displayed</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>    <span class="n">length</span>    <span class="o">=</span> <span class="n">frameNum</span> <span class="ow">or</span> <span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>    <span class="n">speed</span>     <span class="o">=</span> <span class="n">speed</span> <span class="ow">or</span> <span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>    <span class="n">priority</span>  <span class="o">=</span> <span class="n">priority</span> <span class="ow">or</span> <span class="mi">1</span><span class="p">,</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>    <span class="n">active</span>    <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>    <span class="n">filename</span>  <span class="o">=</span> <span class="n">filename</span><span class="p">,</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="p">}</span>
+</span></code></pre></div>
+<hr />
+<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kr">function</span> <span class="nc">vmu</span><span class="p">.</span><span class="nf">createAnimation</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">frameNum</span><span class="p">,</span> <span class="n">speed</span><span class="p">,</span> <span class="n">priority</span><span class="p">)</span>
+</span></code></pre></div>
+Returns an <em>animation</em>.
+<code>frameNum</code> is the number of frames in the animation. Use 1 for static images.If you have multiple frame, make sure the files are named <code>filename1.bin</code>, <code>filename2.bin</code>, etc. </p>
+<hr />
+<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kr">function</span> <span class="nc">vmu</span><span class="p">.</span><span class="nf">setScreen</span><span class="p">(</span><span class="n">animation</span><span class="p">,</span> <span class="n">frame</span><span class="p">)</span>
+</span></code></pre></div>
+Displays the <code>frame</code> (integer) of the specified <code>animation</code>.</p>
+<hr />
+<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kr">function</span> <span class="nc">vmu</span><span class="p">.</span><span class="nf">playAnimation</span><span class="p">(</span><span class="n">animation</span><span class="p">,</span> <span class="n">repeats</span><span class="p">,</span> <span class="n">clearAfter</span><span class="p">)</span>
+</span></code></pre></div>
+Displays an animation for the specified number of <code>repeats</code>. If <code>clearAfter</code> is true, the VMU image will be cleared once the animation is done.</p>
+<hr />
+<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kr">function</span> <span class="nc">vmu</span><span class="p">.</span><span class="nf">clearScreen</span><span class="p">()</span>
+</span></code></pre></div>
+Clears the VMU screen.</p>
+<hr />
+<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kr">function</span> <span class="nc">vmu</span><span class="p">.</span><span class="nf">freeAnimation</span><span class="p">(</span><span class="n">animation</span><span class="p">)</span>
+</span></code></pre></div>
+Frees the memory of the animation.</p>
+<hr />
 
 
 

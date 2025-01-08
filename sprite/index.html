@@ -9,10 +9,8 @@
       
       
       
-        <link rel="prev" href="../graphics/">
+        <link rel="prev" href="../tiled/">
       
-      
-        <link rel="next" href="../input/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +18,7 @@
     
     
       
-        <title>Audio - ANTIRUINS Engine</title>
+        <title>Sprite - ANTIRUINS Engine</title>
       
     
     
@@ -70,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#audio" class="md-skip">
+        <a href="#sprites" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Audio
+              Sprite
             
           </span>
         </div>
@@ -315,28 +313,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Audio
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../audio/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -345,84 +325,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#audio" class="md-nav__link">
-    <span class="md-ellipsis">
-      🔊 AUDIO
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#audio-type" class="md-nav__link">
-    <span class="md-ellipsis">
-      Audio Type
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Audio Type">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#audiosfx" class="md-nav__link">
-    <span class="md-ellipsis">
-      audio.SFX
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#audiowav" class="md-nav__link">
-    <span class="md-ellipsis">
-      audio.WAV
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#audiocdda" class="md-nav__link">
-    <span class="md-ellipsis">
-      audio.CDDA
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#source" class="md-nav__link">
-    <span class="md-ellipsis">
-      Source
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -495,10 +397,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../sprite/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Sprite
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -507,6 +429,44 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sprite-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sprite Structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Functions
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -536,6 +496,8 @@
   
   
   
+    
+  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -544,60 +506,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#audio" class="md-nav__link">
+  <a href="#sprite-structure" class="md-nav__link">
     <span class="md-ellipsis">
-      🔊 AUDIO
+      Sprite Structure
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#audio-type" class="md-nav__link">
+  <a href="#functions" class="md-nav__link">
     <span class="md-ellipsis">
-      Audio Type
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Audio Type">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#audiosfx" class="md-nav__link">
-    <span class="md-ellipsis">
-      audio.SFX
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#audiowav" class="md-nav__link">
-    <span class="md-ellipsis">
-      audio.WAV
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#audiocdda" class="md-nav__link">
-    <span class="md-ellipsis">
-      audio.CDDA
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#source" class="md-nav__link">
-    <span class="md-ellipsis">
-      Source
+      Functions
     </span>
   </a>
   
@@ -618,72 +538,74 @@
                   
 
 
-  <h1>Audio</h1>
-
-<h2 id="audio">🔊 AUDIO<a class="headerlink" href="#audio" title="Permanent link">#</a></h2>
+<h1 id="sprites">🖼️ SPRITES<a class="headerlink" href="#sprites" title="Permanent link">#</a></h1>
+<p>The <code>sprite</code> module allows you to create and manipulate sprites using textures.
+The </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>ANTIRUINS supports various audio formats for different use cases.</p>
 </div>
-<h2 id="audio-type"><strong>Audio Type</strong><a class="headerlink" href="#audio-type" title="Permanent link">#</a></h2>
-<p>ANTIRUINS supports the following audio types:</p>
-<h3 id="audiosfx"><code>audio.SFX</code><a class="headerlink" href="#audiosfx" title="Permanent link">#</a></h3>
-<p>Used for short sound samples, one shots, etc. The sound is loaded directly in memory.<br />
-Must be a .wav file under 65k samples. Can be any sample rate between 8khz and 41 kHz, stero or mono.</p>
-<h3 id="audiowav"><code>audio.WAV</code><a class="headerlink" href="#audiowav" title="Permanent link">#</a></h3>
-<p>Used for audio streaming. Must be a .wav file.</p>
-<h3 id="audiocdda"><code>audio.CDDA</code><a class="headerlink" href="#audiocdda" title="Permanent link">#</a></h3>
-<p>Used for CDDA audio streaming. Must be a 16-bit 44100 kHz .wav file.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>CDDA files must be places in the music folder. You need to add them to the config.lua file.</p>
-</div>
-<h2 id="source"><strong>Source</strong><a class="headerlink" href="#source" title="Permanent link">#</a></h2>
-<div class="language-lua highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">local</span> <span class="n">source</span> <span class="o">=</span> <span class="p">{</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  <span class="n">loaded</span>    <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  <span class="n">id</span>        <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  <span class="n">channel</span>   <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  <span class="n">volume</span>    <span class="o">=</span> <span class="mi">220</span><span class="p">,</span> <span class="c1">-- 0 to 254</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  <span class="n">isPlaying</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  <span class="nb">type</span>      <span class="o">=</span> <span class="n">audio</span><span class="p">.</span><span class="n">SFX</span><span class="p">,</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">}</span>
+<h2 id="sprite-structure"><strong>Sprite Structure</strong><a class="headerlink" href="#sprite-structure" title="Permanent link">#</a></h2>
+<p>A sprite is represented by a table with the following structure:</p>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">local</span> <span class="n">SPRITE</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>  <span class="n">frames</span>    <span class="o">=</span> <span class="p">{},</span>  <span class="c1">-- table of frames</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>  <span class="n">uvs</span>       <span class="o">=</span> <span class="p">{},</span>  <span class="c1">-- table of UV coordinates</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>  <span class="n">cFrame</span>    <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>   <span class="c1">-- current frame</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  <span class="n">maxFrame</span>  <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>   <span class="c1">-- maximum number of frames</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>  <span class="n">direction</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>   <span class="c1">-- animation direction</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>  <span class="n">axis</span>      <span class="o">=</span> <span class="p">{</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">1</span><span class="p">},</span>  <span class="c1">-- axis for scaling</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>  <span class="n">texture</span>   <span class="o">=</span> <span class="p">{},</span>  <span class="c1">-- texture object</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>  <span class="n">timer</span>     <span class="o">=</span> <span class="p">{},</span>  <span class="c1">-- timer handle</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>  <span class="n">stopAnimation</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>  <span class="c1">-- flag to stop animation</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="p">}</span>
 </span></code></pre></div>
 <hr />
-<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kr">function</span> <span class="nc">audio</span><span class="p">.</span><span class="nf">load</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="nb">type</span><span class="p">)</span>
+<h2 id="functions"><strong>Functions</strong><a class="headerlink" href="#functions" title="Permanent link">#</a></h2>
+<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kr">function</span> <span class="nc">sprite</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">spritefile</span><span class="p">,</span> <span class="n">texture</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">row</span><span class="p">)</span>
 </span></code></pre></div>
-Loads a .wav file. Returns a source.<br />
-Type must be audio.SFX, audio.WAV, or audio.CDDA.</p>
+Creates a new sprite.<br />
+<code>spritefile</code> is the path to the sprite data file.<br />
+<code>texture</code> is the texture object or path to the texture file.<br />
+<code>col</code> and <code>row</code> are optional parameters for specifying the number of columns and rows in the sprite sheet.<br />
+Returns a sprite object.</p>
 <hr />
-<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kr">function</span> <span class="nc">audio</span><span class="p">.</span><span class="nf">play</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">volume</span><span class="p">,</span> <span class="n">loop</span><span class="p">)</span>
+<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kr">function</span> <span class="nc">sprite</span><span class="p">:</span><span class="nf">getCopy</span><span class="p">()</span>
 </span></code></pre></div>
-Plays a source.<br />
-<em>OPTIONAL</em>: If <code>volume</code> is set, it will override the source volume.<br />
-<em>OPTIONAL</em>: If <code>loop</code> is true, the audio will loop.  </p>
+Returns a copy of the sprite object.</p>
 <hr />
-<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kr">function</span> <span class="nc">audio</span><span class="p">.</span><span class="nf">setVolume</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">volume</span><span class="p">)</span>
+<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kr">function</span> <span class="nc">sprite</span><span class="p">:</span><span class="nf">draw</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">frame</span><span class="p">,</span> <span class="n">sX</span><span class="p">,</span> <span class="n">sY</span><span class="p">)</span>
 </span></code></pre></div>
-Sets the volume of a playing source.</p>
+Draws the sprite at the specified x-y position.<br />
+<code>frame</code> is the frame number to draw.<br />
+<em>OPTIONAL</em>: <code>sX</code> and <code>sY</code> are scaling factors.</p>
 <hr />
-<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kr">function</span> <span class="nc">audio</span><span class="p">.</span><span class="nf">free</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
+<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kr">function</span> <span class="nc">sprite</span><span class="p">:</span><span class="nf">nextFrame</span><span class="p">()</span>
 </span></code></pre></div>
-Frees the memory of a loaded source.</p>
+Advances to the next frame in the animation.<br />
+Returns the current frame number.</p>
 <hr />
-<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kr">function</span> <span class="nc">audio</span><span class="p">.</span><span class="nf">isPlaying</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
+<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kr">function</span> <span class="nc">sprite</span><span class="p">:</span><span class="nf">loop</span><span class="p">(</span><span class="n">speed</span><span class="p">,</span> <span class="n">startFrom</span><span class="p">,</span> <span class="n">endFrame</span><span class="p">)</span>
 </span></code></pre></div>
-Returns true if the source is currently playing.</p>
+Loops the animation from <code>startFrom</code> to <code>endFrame</code> at the specified <code>speed</code>.</p>
 <hr />
-<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kr">function</span> <span class="nc">audio</span><span class="p">.</span><span class="nf">pause</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
+<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kr">function</span> <span class="nc">sprite</span><span class="p">:</span><span class="nf">play</span><span class="p">(</span><span class="n">speed</span><span class="p">,</span> <span class="n">startFrom</span><span class="p">,</span> <span class="n">endFrame</span><span class="p">)</span>
 </span></code></pre></div>
-Pauses the playback of a source.</p>
+Plays the animation from <code>startFrom</code> to <code>endFrame</code> at the specified <code>speed</code>.</p>
 <hr />
-<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kr">function</span> <span class="nc">audio</span><span class="p">.</span><span class="nf">stop</span><span class="p">(</span><span class="n">source</span><span class="p">)</span>
+<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kr">function</span> <span class="nc">sprite</span><span class="p">:</span><span class="nf">stop</span><span class="p">()</span>
 </span></code></pre></div>
-Stops the playback of a source.</p>
+Stops the current animation.</p>
 <hr />
-<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kr">function</span> <span class="nc">audio</span><span class="p">.</span><span class="nf">setPan</span><span class="p">(</span><span class="n">source</span><span class="p">,</span> <span class="n">pan</span><span class="p">)</span>
+<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kr">function</span> <span class="nc">sprite</span><span class="p">:</span><span class="nf">getFrame</span><span class="p">()</span>
 </span></code></pre></div>
-Sets the pan. 128 is center, 0 is full left, 255 is full right.<br />
-Only works on SFX type sound.</p>
+Returns the current frame number.</p>
+<hr />
+<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kr">function</span> <span class="nc">sprite</span><span class="p">:</span><span class="nf">free</span><span class="p">()</span>
+</span></code></pre></div>
+Frees the texture data associated with the sprite.</p>
+<hr />
+<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kr">function</span> <span class="nc">sprite</span><span class="p">:</span><span class="nf">getSize</span><span class="p">()</span>
+</span></code></pre></div>
+Returns the width and height of the current sprite frame.</p>
 <hr />
 
 

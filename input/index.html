@@ -223,7 +223,7 @@
         
   
   <span class="md-ellipsis">
-    Installation Guide
+    Get started
   </span>
   
 
@@ -385,6 +385,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#controller-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controller Table
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#button-names" class="md-nav__link">
     <span class="md-ellipsis">
       Button names
@@ -430,7 +439,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tiled.md" class="md-nav__link">
+      <a href="../tiled/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -451,11 +460,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../timer.md" class="md-nav__link">
+      <a href="../sprite/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Timer
+    Sprite
   </span>
   
 
@@ -499,6 +508,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#controller-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controller Table
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#button-names" class="md-nav__link">
     <span class="md-ellipsis">
       Button names
@@ -523,22 +541,47 @@
 
 
 <h1 id="input">🎮 INPUT<a class="headerlink" href="#input" title="Permanent link">#</a></h1>
-<h2 id="button-names">Button names<a class="headerlink" href="#button-names" title="Permanent link">#</a></h2>
-<div class="language-text highlight"><pre><span></span><code>    local buttons = {&quot;A&quot;, &quot;B&quot;, &quot;X&quot;, &quot;Y&quot;, &quot;UP&quot;, &quot;DOWN&quot;, &quot;LEFT&quot;, &quot;RIGHT&quot;, &quot;START&quot;}
-</code></pre></div>
+<p>ANTIRUINS supports up to 4 controllers.<br />
+Mouse support is experimental.</p>
+<h2 id="controller-table"><strong>Controller Table</strong><a class="headerlink" href="#controller-table" title="Permanent link">#</a></h2>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">local</span> <span class="n">controller</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        <span class="n">buttonPressed</span>   <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="n">A</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span> <span class="n">B</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span> <span class="n">X</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span> <span class="n">START</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        <span class="n">UP</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span> <span class="n">DOWN</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span> <span class="n">LEFT</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span> <span class="n">RIGHT</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        <span class="p">},</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        <span class="n">lButton</span>         <span class="o">=</span> <span class="p">{},</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        <span class="n">newButton</span>       <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        <span class="n">deadzone</span>        <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        <span class="n">joy</span>             <span class="o">=</span> <span class="n">maf</span><span class="p">.</span><span class="n">vector</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        <span class="n">trig</span>            <span class="o">=</span> <span class="n">maf</span><span class="p">.</span><span class="n">vector</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="p">}</span>
+</span></code></pre></div>
 <hr />
-<div class="language-text highlight"><pre><span></span><code>    input.getButton(button, controllerNumber)
-</code></pre></div>
-<p>Returns true/false if <em>button</em> has been pressed.</p>
+<h2 id="button-names"><strong>Button names</strong><a class="headerlink" href="#button-names" title="Permanent link">#</a></h2>
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">local</span> <span class="n">buttons</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;A&quot;</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">,</span> <span class="s2">&quot;X&quot;</span><span class="p">,</span> <span class="s2">&quot;Y&quot;</span><span class="p">,</span> <span class="s2">&quot;UP&quot;</span><span class="p">,</span> <span class="s2">&quot;DOWN&quot;</span><span class="p">,</span> <span class="s2">&quot;LEFT&quot;</span><span class="p">,</span> <span class="s2">&quot;RIGHT&quot;</span><span class="p">,</span> <span class="s2">&quot;START&quot;</span><span class="p">}</span>
+</span></code></pre></div>
 <hr />
-<p><code>input.getButtonDown(button, *controllerNumber*)</code>
-: Returns true/false if <em>button</em> is being held.</p>
+<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kr">function</span> <span class="nc">input</span><span class="p">.</span><span class="nf">getButton</span><span class="p">(</span><span class="n">button</span><span class="p">,</span> <span class="n">controllerNumber</span><span class="p">)</span>
+</span></code></pre></div>
+Returns true/false if <em>button</em> has been pressed.</p>
 <hr />
-<p><code>input.getJoystick(*controllerNumber*)</code>
-: Returns the joystick position as a <em>vector.</em></p>
+<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kr">function</span> <span class="nc">input</span><span class="p">.</span><span class="nf">getButtonDown</span><span class="p">(</span><span class="n">button</span><span class="p">,</span> <span class="n">controllerNumber</span><span class="p">)</span>
+</span></code></pre></div>
+Returns true/false if <em>button</em> is being held.</p>
 <hr />
-<p><code>input.getTriggers(*controllerNumber*)</code>
-: Returns both triggers as a <em>vector.</em></p>
+<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kr">function</span> <span class="nc">input</span><span class="p">.</span><span class="nf">getJoystick</span><span class="p">(</span><span class="n">controllerNumber</span><span class="p">)</span>
+</span></code></pre></div>
+Returns the joystick position as a <em>vector</em>.</p>
+<hr />
+<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kr">function</span> <span class="nc">input</span><span class="p">.</span><span class="nf">getTriggers</span><span class="p">(</span><span class="n">controllerNumber</span><span class="p">)</span>
+</span></code></pre></div>
+Returns both triggers as a <em>vector</em>.</p>
+<hr />
+<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kr">function</span> <span class="nc">input</span><span class="p">.</span><span class="nf">getControllerType</span><span class="p">(</span><span class="n">controllerNumber</span><span class="p">)</span>
+</span></code></pre></div>
+Returns the controller type.<br />
+Controller, Mouse, or Keyboard.</p>
+<hr />
 
 
 

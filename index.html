@@ -245,9 +245,51 @@
         <li class="md-nav__item">
   <a href="#features" class="md-nav__link">
     <span class="md-ellipsis">
-      Features:
+      Features
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compatibility
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#v075-current" class="md-nav__link">
+    <span class="md-ellipsis">
+      v075 - CURRENT
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v070" class="md-nav__link">
+    <span class="md-ellipsis">
+      v070
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -270,7 +312,7 @@
         
   
   <span class="md-ellipsis">
-    Installation Guide
+    Get started
   </span>
   
 
@@ -426,7 +468,7 @@
   
   
     <li class="md-nav__item">
-      <a href="tiled.md" class="md-nav__link">
+      <a href="tiled/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -447,11 +489,11 @@
   
   
     <li class="md-nav__item">
-      <a href="timer.md" class="md-nav__link">
+      <a href="sprite/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Timer
+    Sprite
   </span>
   
 
@@ -497,9 +539,51 @@
         <li class="md-nav__item">
   <a href="#features" class="md-nav__link">
     <span class="md-ellipsis">
-      Features:
+      Features
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compatibility
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#v075-current" class="md-nav__link">
+    <span class="md-ellipsis">
+      v075 - CURRENT
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v070" class="md-nav__link">
+    <span class="md-ellipsis">
+      v070
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -520,19 +604,49 @@
 
 <h1 id="welcome-to-antiruins-engine">Welcome to ANTIRUINS Engine<a class="headerlink" href="#welcome-to-antiruins-engine" title="Permanent link">#</a></h1>
 <p>Easy to use, pre-compiled 2D game engine for the SEGA Dreamcast and PC.</p>
-<p>ANTIRUINS engine was initally developped for Fragmented Almanac, a SEGA Dreamcast game released in 2024. </p>
-<p>The engine is now free to use, for personal and commercial project, with source corde available on demand.</p>
-<h2 id="features">Features:<a class="headerlink" href="#features" title="Permanent link">#</a></h2>
+<p>ANTIRUINS engine was initally developped for Fragmented Almanac, a SEGA Dreamcast game released in 2024. <br />
+The engine is now free to use, for personal and commercial project, with source corde available on demand.</p>
+<h2 id="features"><strong>Features</strong><a class="headerlink" href="#features" title="Permanent link">#</a></h2>
 <ul>
+<li>2D engine for SEGA Dreamcast and PC using Love2D.</li>
 <li>Lua programming language.</li>
 <li>Loads .png and .dtex files with palette support.</li>
-<li>2D engine with spritesheet support.</li>
+<li>Spritesheet support.</li>
+<li>Tiled map support.</li>
 <li>Sound effect using .wav file.</li>
 <li>Audio streaming using CDDA and .wav files.</li>
-<li>Tiled map support.</li>
 <li>Basic collision system.</li>
 <li>VMU save + load, VMU bitmap display.</li>
 </ul>
+<h2 id="compatibility"><strong>Compatibility</strong><a class="headerlink" href="#compatibility" title="Permanent link">#</a></h2>
+<p>ANTIRUINS has <strong>been developped to be used on Linux</strong>, but is aiming to be compatible with Windows and MacOS.
+The <code>make dependency</code> is currently being adapted to MacOS to provide with the necessary tools.</p>
+<p>ANTIRUINS is shipping with these pre-built binaries for windows:</p>
+<ul>
+<li>cdi4dc.exe</li>
+<li>mkisofs.exe</li>
+</ul>
+<h2 id="version"><strong>Version</strong><a class="headerlink" href="#version" title="Permanent link">#</a></h2>
+<h3 id="v075-current">v075 - CURRENT<a class="headerlink" href="#v075-current" title="Permanent link">#</a></h3>
+<div class="language-text highlight"><pre><span></span><code>Fixed a bunch of small audio inconsistencies.
+Added audio.setPan for SFX sounds.
+No more audio.resume, if you use audio.pause then audio.play it should resume (CDDA and WAV only)
+Added paletted texture support on Dreamcast. Check the example_palette.lua or read the docs.
+Palette can be loaded as .dtex.pal files or set manually.
+Initial mouse support for the Dreamcast.
+Added an input tester and fix some bugs when you have more than 1 controller.
+</code></pre></div>
+<h3 id="v070">v070<a class="headerlink" href="#v070" title="Permanent link">#</a></h3>
+<div class="language-text highlight"><pre><span></span><code>Fonts file can now be .png not just .dtex.
+Font resize is much cleaner now.
+Texture filtering using graphics.setTextureFilter()
+Changed the default 0GDTEX image included to a more “generic” antiruins one.
+Placed a bunch of older libraries in an “old” folder
+Currently writing a simple GUI library.
+Texture flipping now work properly.
+Love2D stuff now matches more closely the Dreamcast visual output. - test it with make love
+Completely rewrote the tiled map importer.
+</code></pre></div>
 
 
 
