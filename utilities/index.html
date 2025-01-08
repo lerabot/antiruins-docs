@@ -285,6 +285,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Utilities
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -294,6 +305,43 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#file-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Management
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Timing
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -453,6 +501,32 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#file-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      File Management
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Timing
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -467,40 +541,36 @@
 
 
 <h1 id="utilities">🛠️ UTILITIES<a class="headerlink" href="#utilities" title="Permanent link">#</a></h1>
-<table>
-<thead>
-<tr>
-<th>Functions</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>findFile(filename)</strong></td>
-<td>Returns a path if the filename is found on the /cd, /rd, /pc and or in the loaded game folder.</td>
-</tr>
-<tr>
-<td><strong>getUS()</strong></td>
-<td>Returns the current microseconds since game as started.</td>
-</tr>
-<tr>
-<td><strong>getMS()</strong></td>
-<td>Returns the current millisecond since game as started.</td>
-</tr>
-<tr>
-<td><strong>getFPS()</strong></td>
-<td>Returns the current frame per seconds.</td>
-</tr>
-<tr>
-<td><strong>mountRomdisk(fileName, mountpoint)</strong></td>
-<td>Mount a romdisk at specified mountpoint. The most common mountpoint is “/rd”</td>
-</tr>
-<tr>
-<td><strong>unmountRomdisk(mountpoint)</strong></td>
-<td>Unmount the specified mountpoint and frees up memory.</td>
-</tr>
-</tbody>
-</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The utilities provided are essential for managing files and performance metrics in ANTIRUINS.</p>
+</div>
+<h2 id="file-management"><strong>File Management</strong><a class="headerlink" href="#file-management" title="Permanent link">#</a></h2>
+<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kr">function</span> <span class="nf">findFile</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+</span></code></pre></div>
+Returns a path if the filename is found on the /cd, /rd, /pc, or in the loaded game folder.</p>
+<hr />
+<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kr">function</span> <span class="nf">mountRomdisk</span><span class="p">(</span><span class="n">fileName</span><span class="p">,</span> <span class="n">mountpoint</span><span class="p">)</span>
+</span></code></pre></div>
+Mounts a romdisk at the specified mountpoint. The most common mountpoint is “/rd”.</p>
+<hr />
+<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kr">function</span> <span class="nf">unmountRomdisk</span><span class="p">(</span><span class="n">mountpoint</span><span class="p">)</span>
+</span></code></pre></div>
+Unmounts the specified mountpoint and frees up memory.</p>
+<hr />
+<h2 id="timing"><strong>Timing</strong><a class="headerlink" href="#timing" title="Permanent link">#</a></h2>
+<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kr">function</span> <span class="nf">getUS</span><span class="p">()</span>
+</span></code></pre></div>
+Returns the current microseconds since the game has started.</p>
+<hr />
+<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kr">function</span> <span class="nf">getMS</span><span class="p">()</span>
+</span></code></pre></div>
+Returns the current milliseconds since the game has started.</p>
+<hr />
+<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kr">function</span> <span class="nf">getFPS</span><span class="p">()</span>
+</span></code></pre></div>
+Returns the current frames per second.</p>
+<hr />
 
 
 
