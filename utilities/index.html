@@ -474,6 +474,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../collision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Collision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -541,33 +562,49 @@
 
 
 <h1 id="utilities">🛠️ UTILITIES<a class="headerlink" href="#utilities" title="Permanent link">#</a></h1>
+<p>The utilities provided are essential for managing files and performance metrics in ANTIRUINS.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The utilities provided are essential for managing files and performance metrics in ANTIRUINS.</p>
+<p>There is a global table called STATS that contains various information just as FPS, Lua update and render time, the PVR render time and memory, etc.
+<div class="language-lua highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">STATS</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="n">dt</span>      <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="c1">-- delta time in mS.</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="n">update</span>  <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="c1">-- time taken by the Lua update function. (uS)</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="n">render</span>  <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="c1">-- time taken by the Lua render function. (uS)</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="n">pvrTime</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="c1">-- time taken by the PVR render function. (uS)</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="n">pvrMem</span>  <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="c1">-- memory used by the PVR render function. (% used)</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="n">fps</span>     <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="c1">-- frames per second.</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="n">sprites</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="c1">-- number of sprites current drawn.</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="n">memory</span>  <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="c1">-- memory used by the game. (Kb)</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="p">}</span>
+</span></code></pre></div></p>
 </div>
 <h2 id="file-management"><strong>File Management</strong><a class="headerlink" href="#file-management" title="Permanent link">#</a></h2>
-<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kr">function</span> <span class="nf">findFile</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kr">function</span> <span class="nf">findFile</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
 </span></code></pre></div>
 Returns a path if the filename is found on the /cd, /rd, /pc, or in the loaded game folder.</p>
 <hr />
-<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kr">function</span> <span class="nf">mountRomdisk</span><span class="p">(</span><span class="n">fileName</span><span class="p">,</span> <span class="n">mountpoint</span><span class="p">)</span>
+<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kr">function</span> <span class="nf">mountRomdisk</span><span class="p">(</span><span class="n">fileName</span><span class="p">,</span> <span class="n">mountpoint</span><span class="p">)</span>
 </span></code></pre></div>
 Mounts a romdisk at the specified mountpoint. The most common mountpoint is “/rd”.</p>
 <hr />
-<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kr">function</span> <span class="nf">unmountRomdisk</span><span class="p">(</span><span class="n">mountpoint</span><span class="p">)</span>
+<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kr">function</span> <span class="nf">unmountRomdisk</span><span class="p">(</span><span class="n">mountpoint</span><span class="p">)</span>
 </span></code></pre></div>
 Unmounts the specified mountpoint and frees up memory.</p>
 <hr />
+<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kr">function</span> <span class="nf">ExecuteBinary</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+</span></code></pre></div>
+Executes a binary file. Works only on Dreamcast.</p>
+<hr />
 <h2 id="timing"><strong>Timing</strong><a class="headerlink" href="#timing" title="Permanent link">#</a></h2>
-<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kr">function</span> <span class="nf">getUS</span><span class="p">()</span>
+<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kr">function</span> <span class="nf">getUS</span><span class="p">()</span>
 </span></code></pre></div>
 Returns the current microseconds since the game has started.</p>
 <hr />
-<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kr">function</span> <span class="nf">getMS</span><span class="p">()</span>
+<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kr">function</span> <span class="nf">getMS</span><span class="p">()</span>
 </span></code></pre></div>
 Returns the current milliseconds since the game has started.</p>
 <hr />
-<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kr">function</span> <span class="nf">getFPS</span><span class="p">()</span>
+<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kr">function</span> <span class="nf">getFPS</span><span class="p">()</span>
 </span></code></pre></div>
 Returns the current frames per second.</p>
 <hr />

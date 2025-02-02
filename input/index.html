@@ -474,6 +474,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../collision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Collision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -542,7 +563,8 @@
 
 <h1 id="input">🎮 INPUT<a class="headerlink" href="#input" title="Permanent link">#</a></h1>
 <p>ANTIRUINS supports up to 4 controllers.<br />
-Mouse support is experimental.</p>
+Mouse support is untested.<br />
+Initial keyboard support is in -- Check the input-tester.lua file.</p>
 <h2 id="controller-table"><strong>Controller Table</strong><a class="headerlink" href="#controller-table" title="Permanent link">#</a></h2>
 <div class="language-lua highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kd">local</span> <span class="n">controller</span> <span class="o">=</span> <span class="p">{</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>        <span class="n">buttonPressed</span>   <span class="o">=</span> <span class="p">{</span>
@@ -554,7 +576,8 @@ Mouse support is experimental.</p>
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        <span class="n">deadzone</span>        <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span>
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        <span class="n">joy</span>             <span class="o">=</span> <span class="n">maf</span><span class="p">.</span><span class="n">vector</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span>
 </span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        <span class="n">trig</span>            <span class="o">=</span> <span class="n">maf</span><span class="p">.</span><span class="n">vector</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="p">}</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>        <span class="n">controllerType</span>  <span class="o">=</span> <span class="s2">&quot;Controller&quot;</span><span class="p">,</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="p">}</span>
 </span></code></pre></div>
 <hr />
 <h2 id="button-names"><strong>Button names</strong><a class="headerlink" href="#button-names" title="Permanent link">#</a></h2>

@@ -12,6 +12,8 @@
         <link rel="prev" href="../tiled/">
       
       
+        <link rel="next" href="../collision/">
+      
       
       <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.49">
@@ -472,6 +474,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../collision/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Collision
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -539,10 +562,12 @@
 
 
 <h1 id="sprites">🖼️ SPRITES<a class="headerlink" href="#sprites" title="Permanent link">#</a></h1>
-<p>The <code>sprite</code> module allows you to create and manipulate sprites using textures.
-The </p>
+<p>The <code>sprite</code> module allows you to load spritesheets and helps with animation.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
+<p>You can load 2 types of spritsheets:<br />
+1. If you have grid/strip like image, use col/rows to specify the number of columns and rows in the spritesheet.<br />
+2. Generate a spritesheet with Texture Packer using the ANTIRUINS exporter located in <code>tools/texturepacker</code>. <a href="https://www.codeandweb.com/texturepacker/documentation/custom-exporter">Read More</a></p>
 </div>
 <h2 id="sprite-structure"><strong>Sprite Structure</strong><a class="headerlink" href="#sprite-structure" title="Permanent link">#</a></h2>
 <p>A sprite is represented by a table with the following structure:</p>
@@ -562,11 +587,10 @@ The </p>
 <h2 id="functions"><strong>Functions</strong><a class="headerlink" href="#functions" title="Permanent link">#</a></h2>
 <p><div class="language-lua highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kr">function</span> <span class="nc">sprite</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">spritefile</span><span class="p">,</span> <span class="n">texture</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">row</span><span class="p">)</span>
 </span></code></pre></div>
-Creates a new sprite.<br />
-<code>spritefile</code> is the path to the sprite data file.<br />
+Creates and returns a new sprite object.</p>
+<p><code>spritefile</code> is the path to the sprite data file. If you're using col/rows, set this to nil.
 <code>texture</code> is the texture object or path to the texture file.<br />
-<code>col</code> and <code>row</code> are optional parameters for specifying the number of columns and rows in the sprite sheet.<br />
-Returns a sprite object.</p>
+<em>OPTIONAL</em>:<code>col</code> and <code>row</code> are specifiy the number of columns and rows in the spritesheet.  </p>
 <hr />
 <p><div class="language-lua highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kr">function</span> <span class="nc">sprite</span><span class="p">:</span><span class="nf">getCopy</span><span class="p">()</span>
 </span></code></pre></div>
@@ -595,15 +619,19 @@ Plays the animation from <code>startFrom</code> to <code>endFrame</code> at the 
 </span></code></pre></div>
 Stops the current animation.</p>
 <hr />
-<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kr">function</span> <span class="nc">sprite</span><span class="p">:</span><span class="nf">getFrame</span><span class="p">()</span>
+<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kr">function</span> <span class="nc">sprite</span><span class="p">:</span><span class="nf">setFrame</span><span class="p">(</span><span class="n">frameNum</span><span class="p">)</span>
+</span></code></pre></div>
+Sets the frame number.</p>
+<hr />
+<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kr">function</span> <span class="nc">sprite</span><span class="p">:</span><span class="nf">getFrame</span><span class="p">()</span>
 </span></code></pre></div>
 Returns the current frame number.</p>
 <hr />
-<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kr">function</span> <span class="nc">sprite</span><span class="p">:</span><span class="nf">free</span><span class="p">()</span>
+<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kr">function</span> <span class="nc">sprite</span><span class="p">:</span><span class="nf">free</span><span class="p">()</span>
 </span></code></pre></div>
 Frees the texture data associated with the sprite.</p>
 <hr />
-<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="kr">function</span> <span class="nc">sprite</span><span class="p">:</span><span class="nf">getSize</span><span class="p">()</span>
+<p><div class="language-lua highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="kr">function</span> <span class="nc">sprite</span><span class="p">:</span><span class="nf">getSize</span><span class="p">()</span>
 </span></code></pre></div>
 Returns the width and height of the current sprite frame.</p>
 <hr />
